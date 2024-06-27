@@ -1,0 +1,96 @@
+1.
+The & operator performs a bitwise AND operation on two integers. This means it compares
+ each bit of the two integers and returns a new integer where each bit is set to 1 if both
+  corresponding bits of the original integers are 1, otherwise it is set to 0.
+
+  int a = 5;    // 0101 in binary
+int b = 3;    // 0011 in binary
+int result = a & b;  // result is 1 (0001 in binary)
+
+ __ __(don't get confused!!)__ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+| The && operator is used for logical AND operations in boolean expressions. It returns
+| true if both operands are true; otherwise, it returns false. It is commonly used in 
+| conditional statements.
+|int a = 5;
+|int b = 3;
+|if (a > 0 && b > 0) {
+|    // This block will execute because both a > 0 and b > 0 are true
+|}
+| !!! similar story with difference btw |(bitwise OR operator) and ||(logical OR operator)
+|__ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+
+2.
+The | operator performs a bitwise OR operation on two integers. This means it compares each
+ bit of the two integers and returns a new integer where each bit is set to 1 if at least 
+ one of the corresponding bits of the original integers is 1; otherwise, it is set to 0.
+
+ int a = 5;    // 0101 in binary
+int b = 3;    // 0011 in binary
+int result = a | b;  // result is 7 (0111 in binary)
+
+3.
+XOR= ^
+if both the bitwise input are different then it is 1. else 0.
+ex- if 0 and 1 / or 1 and 0 then result will be 1.
+but if 0 and 0  or 1 and 1 then result will be 0.
+
+4.
+left shift = <<
+It shifts the bits of its left-hand operand to the left by the number of positions
+specified by its right-hand operand.
+
+int value = 5;    // 0000 0101 in binary
+int result = value << 2;  // Shift left by 2 positions
+// result is 20, which is 0001 0100 in binary
+
+shortcut= 
+int x = 3;     // 0000 0011 in binary
+int y = x << 3; // 0001 1000 in binary, which is 24
+// 3 * 2^3 = 3 * 8 = 24  !!!!!!!!!!!!
+i.e x*(2^y)
+
+5.
+the right shift operator (>>) is used to shift the bits of a number towards the right by
+ a specified number of positions
+ int x = 8;  // Binary representation: 0000 1000
+int result = x >> 2;  // Shifting right by 2 positions
+// After shifting, result = 0000 0010 which is 2 in decimal
+
+shortcut = x/(2^y)
+
+6.
+bitwise not operator( ~ )
+When applied to a binary number, the bitwise NOT operator flips each bit, changing 1s to 0s
+ and 0s to 1s. For example:
+ ~0   => 1
+~1   => 0
+~10  => 01
+
+note= waise ye 01 ke drame 32 bits tak hote hai.
+total hota hai 0 to 2^32-1(4294967295)
+1= 00----00001
+so ~1= 11-----1110;= i.e equal to 4294967294
+~5=4294967295-5
+~6=4294967295-6
+
+7.
+Two's Complement
+This is the most widely used method for representing negative numbers in binary. To find
+ the two's complement of a number, you invert all the bits (as in one's complement) and 
+ then add 1 to the least significant bit (LSB).
+
+Example for 4-bit numbers:
+
++3: 0011
+-3:
+Invert all bits of 3: 1100
+Add 1: 1100 + 1 = 1101
+
+To represent -5 in 8-bit two's complement:
+
+Find the binary representation of +5: 00000101
+Invert all the bits: 11111010
+Add 1 to the result: 11111010 + 1 = 11111011
+
+range= -2^(n-1) to 2^(n-1)-1 where n is the number of bit.
+
