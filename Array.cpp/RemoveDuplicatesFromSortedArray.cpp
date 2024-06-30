@@ -3,9 +3,9 @@ using namespace std;
 
 int removeDuplicates(int arr[], int n)
 {
-    for(int i=0;i<=n-1;i++){
+    for(int i=0;i<n-1;i++){
         if(arr[i]==arr[i+1]){
-            for(int j=i;j<=n-1;j++){
+            for(int j=i;j<n-1;j++){
                 arr[j]=arr[j+1];
             }
             n=n-1;
@@ -30,4 +30,49 @@ int main(){
     for(int i=0;i<newN;i++){
         cout<<arr[i]<<" ";
     }
+}
+//----------------------------------------------------
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+ int remDups(int arr[], int n)
+{
+	int res = 1;
+
+	for(int i = 1; i < n; i++)
+	{
+		if(arr[res - 1] != arr[i])
+		{
+			arr[res] = arr[i];
+			res++;
+		}
+	}
+
+	return res;
+}
+    
+int main() {
+	
+      int arr[] = {10, 20, 20, 30, 30, 30}, n = 6;
+
+      cout<<"Before Removal"<<endl;
+
+       for(int i = 0; i < n; i++)
+       {
+       		cout<<arr[i]<<" ";
+       }
+
+       cout<<endl;
+
+       n = remDups(arr, n);
+
+       cout<<"After Removal"<<endl;
+
+       for(int i = 0; i < n; i++)
+       {
+       		cout<<arr[i]<<" ";
+       }
+    
 }

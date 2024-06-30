@@ -1,5 +1,4 @@
 #include<iostream>
-//#include<cmath>
 using namespace std;
 
 int main()
@@ -15,7 +14,7 @@ int main()
     int low=0;
     int high=n-1;
 
-    while(low<high){
+    while(low<high){//swap kardenge low and high,then shift towards innerside of array
         int temp=arr[low];
         arr[low]=arr[high];
         arr[high]=temp;
